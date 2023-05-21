@@ -1,0 +1,156 @@
+<div class="insured">
+  
+  <div class="header">
+    <img src="/assets/logo@2x.png" alt="logo" class="logo">
+    <h1>常熟医保综合监管平台</h1>
+
+    <a routerLink="/" class="back">
+      <img src="/assets/back.png" alt="back">
+      <span>返回</span>
+    </a>
+  </div>
+
+  <div class="container">
+    <div class="left">
+      <div class="section section1">
+        <div class="head">
+          <h2>参保情况</h2>
+        </div>
+        <div class="content">
+          <p class="title"><img src="../../../assets/index/Frame_1162@2x.png" alt="icon"><strong>常住人口</strong></p>
+          <p class="number">
+            <span class="wrapper">1</span>
+            <span class="wrapper">6</span>
+            <span class="wrapper">8</span>
+            <span class="dou">,</span>
+            <span class="wrapper">6</span>
+            <span class="wrapper">1</span>
+            <span class="wrapper">万</span>
+          </p>
+          <div class="info">
+            <div class="left">
+              <p class="num">944323</p>
+              <p class="unit">人</p>
+              <p class="name">职工参保人数</p>
+            </div>
+            <div class="round">
+              <p class="num">126.98</p>
+              <p class="unit">万人</p>
+              <p class="name">参保总人数</p>
+            </div>
+            <div class="right">
+              <p class="num">944323</p>
+              <p class="unit">人</p>
+              <p class="name">城乡参保人数</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="section section2">
+        <div class="head">
+          <h2>参保险种分布</h2>
+        </div>
+        <div class="content">
+          <div class="echarts-wrapper">
+            <div echarts [options]="section2_Option" class="echarts"></div>
+          </div>
+          <div class="legend">
+            <p class="p1"><i></i><label>居民</label><span>25.63%</span></p>
+            <p class="p2"><i></i><label>职工</label><span>74.37%</span></p>
+          </div>
+        </div>
+      </div>
+      <div class="section section3">
+        <div class="head">
+          <h2>参保人群分布</h2>
+        </div>
+        <div class="content">
+          <div class="item" *ngFor="let item of section3_Data">
+            <p class="info">
+              <span class="name">{{item.name}}</span>
+              <span class="value"><b>{{item.value}}</b>万人</span>
+            </p>
+            <div class="percent">
+              <p [ngStyle]="{'width': item.value+'%'}"><i></i></p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="center">
+      <div class="category">
+        <ul>
+          <li class="item" *ngFor="let item of category_list">
+            <img [src]="item.icon" alt="icon">
+            <p>
+              <span class="name">{{item.name}}</span>
+              <span class="number">{{item.number}}</span>
+            </p>
+          </li>
+        </ul>
+      </div>
+      <div class="section section4">
+        <div class="head">
+          <h2>参保单位行业TOP10</h2>
+        </div>
+        <div class="content">
+          <ul>
+            <li class="th">
+              <span class="no">排名</span>
+              <span class="name">行业名</span>
+              <span class="unit">参保单位数</span>
+            </li>
+            <li *ngFor="let item of section4_Data; index as i">
+              <span class="no index">{{i + 1}}</span>
+              <span class="name">{{item.name}}</span>
+              <span class="unit">
+                <i class="percent"><b [ngStyle]="{'width': ((item.number/6000)*100)+'%'}"></b></i>
+                <nz-statistic [nzValue]="(item.number | number)!"></nz-statistic>
+              </span>
+            </li>
+          </ul>
+        </div>
+      </div>
+      <div class="section section5">
+        <div class="head">
+          <h2>参保单位趋势</h2>
+          <span>2023.01-2023.12</span>
+        </div>
+        <div class="content">
+          <div echarts [options]="section5_Option" class="echarts"></div>
+        </div>
+      </div>
+      <div class="section section6">
+        <div class="head">
+          <h2>职工参保人员趋势</h2>
+          <span>2023.01-2023.12</span>
+        </div>
+        <div class="content">
+          <div echarts [options]="section6_Option" class="echarts"></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="right">
+      <div class="section section7">
+        <div class="head">
+          <h2>居民参保乡镇分布</h2>
+        </div>
+        <div class="content">
+          <div echarts [options]="getEcharts3DBar(data1, data2)" class="echarts"></div>
+        </div>
+      </div>
+      <div class="section section8">
+        <div class="head">
+          <h2>居民参保人员趋势</h2>
+          <span>2023.01-2023.12</span>
+        </div>
+        <div class="content">
+          <div echarts [options]="section8_Option" class="echarts"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</div>

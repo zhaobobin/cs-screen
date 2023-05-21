@@ -1,0 +1,481 @@
+.insured {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  background: url(../../../assets/bg.jpg) no-repeat center top #333;
+  background-size: 100% 100%;
+
+  .header {
+    display: flex;
+    height: 50px;
+    justify-content: center;
+    align-items: center;
+    background: url(../../../assets/head_bg.png) no-repeat center top;
+    background-size: auto 110%;
+    position: relative;
+    .logo {
+      margin-right: 16px;
+      width: 30px;
+      height: auto;
+    }
+    h1 {
+      font-size: 26px;
+      font-weight: 400;
+      text-align: center;
+    }
+    .back {
+      display: flex;
+      width: 64px;
+      height: 32px;
+      justify-content: center;
+      align-items: center;
+      text-decoration: none;
+      position: absolute;
+      left: 34px;
+      top: 50%;
+      margin-top: -10px;
+      // background: rgba(1, 231, 217, .2);
+      box-shadow: inset 0px 0px 20px 5px rgba(1, 231, 217, .2);
+      border: 1px solid rgba(1, 231, 217, .3);
+      border-radius: 3px;
+      img {
+        width: auto;
+        height: 24px;
+      }
+      span {
+        font-size: 14px;
+        font-weight: 500;
+        color: #C3FFEF;
+        line-height: 24px;
+        text-shadow: 0px 0px 8px rgba(65,197,189,0.8);
+      }
+    }
+  }
+
+  .container {
+    display: flex;
+    flex: 1;
+    flex-direction: row;
+    padding: 10px 24px;
+
+    .section {
+      display: flex;
+      flex-direction: column;
+      margin: 0 10px 10px;
+      
+      .head {
+        display: flex;
+        align-items: center;
+        height: 48px;
+        color: #fff;
+        padding-left: 56px;
+        background: url(../../../assets/title_bg.png) no-repeat left center;
+        background-size: auto 100%;
+        h2 {
+          display: inline-block;
+          font-size: 20px;
+          font-weight: 400;
+          font-family: YouSheBiaoTiHei-Regular;
+        }
+        span {
+          margin-left: 10px;
+          font-size: 12px;
+          color: #C3FFEF;
+        }
+      }
+      .content {
+        display: flex;
+        flex-direction: row;
+        flex: 1;
+        border: 1px solid;
+        border-image: linear-gradient(180deg, rgba(20, 179, 169, 0), rgba(20, 179, 169, 0.3)) 1 1;
+        background: linear-gradient(180deg, rgba(22,241,183,0) 0%, rgba(8, 124, 125, .1) 99%);
+        overflow: hidden;
+      }
+      .echarts {
+        width: 100%;
+        height: 100%;
+      }
+    }
+
+    .left {
+      display: flex;
+      flex-direction: column;
+      width: 24%;
+      
+      .section1 {
+        flex: 1;
+        .content {
+          padding: 0 24px 5px;
+          display: flex;
+          flex-direction: column;
+          justify-content: center;
+        }
+        .title {
+          display: flex;
+          width: 100%;
+          height: 32px;
+          align-items: center;
+          justify-content: center;
+          font-family: YouSheBiaoTiHei-Regular;
+          font-weight: 400;
+          img {
+            width: 32px;
+            height: auto;
+          }
+        }
+        .number {
+          display: flex;
+          width: 100%;
+          height: 40px;
+          align-items: center;
+          justify-content: center;
+          margin-bottom: 10px;
+          span {
+            display: inline-block;
+            font-size: 24px;
+            font-weight: bold;
+            margin: 0 6px;
+            width: 40px;
+            height: 40px;
+            line-height: 36px;
+            text-align: center;
+            &.wrapper {
+              background: linear-gradient(180deg, #087C7D 0%, rgba(8,124,125,0.1) 100%);
+              border-radius: 2px 2px 2px 2px;
+              opacity: 1;
+              border: 2px solid;
+              border-image: linear-gradient(180deg, rgba(22, 241, 183, 1), rgba(22, 241, 183, 0)) 2 2;
+            }
+            &.dou {
+              margin: 0 -6px;
+            }
+          }
+        }
+        .info {
+          display: flex;
+          flex-direction: row;
+          height: 130px;
+          
+          .left, .right {
+            display: flex;
+            width: 25%;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            line-height: 24px;
+            .num {
+              font-size: 16px;
+              font-weight: 500;
+            }
+            .unit {
+              font-size: 12px;
+              color: #C3FFEF;
+            }
+            .name {
+              font-size: 14px;
+              color: #C3FFEF;
+              font-weight: 500;
+            }
+          }
+          .round {
+            display: flex;
+            width: 50%;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            line-height: 24px;
+            background: url(../../../assets/index/round.png) no-repeat center center;
+            background-size: auto 100%;
+            .num {
+              font-size: 24px;
+              font-weight: bold;
+              color: #F4D80B;
+            }
+            .unit {
+              font-size: 14px;
+              color: #C3FFEF;
+            }
+            .name {
+              font-size: 14px;
+              color: #C3FFEF;
+              font-weight: 500;
+            }
+          }
+        }
+      }
+      .section2 {
+        height: 24%;
+        flex: 1;
+        .content {
+          padding: 16px 24px;
+        }
+        .echarts-wrapper {
+          display: flex;
+          width: 40%; 
+          height: 100%;
+        }
+        .legend {
+          display: flex;
+          flex-direction: column;
+          justify-content: center;
+          width: 60%; 
+          height: 100%;
+          p {
+            display: flex;
+            height: 45%;
+            justify-content: center;
+            align-items: center;
+            i {
+              margin-right: 12px;
+            }
+            label {
+              margin-right: 16px;
+              color: #C3FFEF;
+            }
+            &.p1 {
+              background: url(../../../assets/index/Group22@2x.png) no-repeat left top;
+              background-size: 100% auto;
+              i {
+                display: inline-block;
+                width: 0;
+                height: 0;
+                border-left: 7px solid #276AF2;
+                border-top: 5px solid transparent;
+                border-right: 7px solid transparent;
+                border-bottom: 5px solid transparent;
+              }
+            }
+            &.p2 {
+              background: url(../../../assets/index/Group27@2x.png) no-repeat left bottom;
+              background-size: 100% auto;
+              i {
+                display: inline-block;
+                width: 0;
+                height: 0;
+                border-left: 7px solid #2EE2B2;
+                border-top: 5px solid transparent;
+                border-right: 7px solid transparent;
+                border-bottom: 5px solid transparent;
+              }
+            }
+          }
+        }
+      }
+      .section3 {
+        height: 42%;
+
+        .content {
+          display: flex;
+          flex-direction: column;
+          padding: 16px 24px;
+          .item {
+            flex: 1;
+            margin-bottom: 10px;
+            .info {
+              display: flex;
+              flex-direction: row;
+              justify-content: space-between;
+              font-size: 16px;
+              margin-bottom: 3px;
+              span {
+                color: #C3FFEF;
+              }
+              .value {
+                b {
+                  margin-right: 2px;
+                  color: #16F1B7;
+                }
+              }
+            }
+            .percent {
+              height: 8px;
+              background: rgba(8, 124, 125, 2);
+              border-radius: 20px;
+              p {
+                height: 100%;
+                background: linear-gradient(270deg, #25CA9E 0%, #C0EAE8 100%);
+                border-radius: 20px;
+                position: relative;
+                i {
+                  display: block;
+                  width: 12px;
+                  height: 12px;
+                  background: #fff;
+                  border: 2px solid #25CA9E;
+                  border-radius: 50%;
+                  position: absolute;
+                  top: 50%;
+                  right: 0;
+                  margin-top: -6px;
+                  margin-right: -6px;
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+
+    .center {
+      display: flex;
+      width: 44%;
+      flex-direction: column;
+      .head {
+        background: url(../../../assets/title_bg2.png) no-repeat left center;
+        background-size: auto 100%;
+      }
+
+      .category {
+        margin-bottom: 10px;
+        ul {
+          display: flex;
+          flex-direction: row;
+          align-items: center;
+          justify-content: center;
+          padding: 5px 0;
+          li {
+            display: flex;
+            flex-direction: row;
+            padding: 0 10px;
+            img {
+              width: 48px;
+              height: 48px;
+            }
+            p {
+              margin-left: 16px;
+              display: flex;
+              flex-direction: column;
+              justify-content: space-between;
+              min-width: 100px;
+              span {
+                display: block;
+                &.name {
+                  font-size: 14px;
+                  font-weight: 500;
+                  line-height: 22px;
+                  text-shadow: 0px 0px 8px rgba(65,197,189,0.8);
+                  background: linear-gradient(270deg, #102B2C 0%, rgba(16,43,44,0) 0%, rgba(30,202,191,0.4) 32%, rgba(30,202,191,0.4) 66%, rgba(14,37,41,0) 100%);
+                }
+                &.number {
+                  font-size: 22px;
+                  font-weight: bold;
+                  color: #31EAF2;
+                  line-height: 22px;
+                }
+              }
+            }
+          }
+        }
+      }
+      .section4 {
+        height: 46%;
+        ul {
+          width: 100%;
+          // padding: 5px 0;
+          li {
+            display: flex;
+            flex-direction: row;
+            height: 30px;
+            &.th {
+              span {
+                font-size: 12px;
+                color: #C3FFEF;
+              }
+            }
+            &:nth-child(even) {
+              background: rgba(54, 195, 226, 0.10);
+            }
+            span {
+              display: flex;
+              align-items: center;
+              justify-content: center;
+              &.no {
+                width: 90px;
+              }
+              &.index {
+                background: url(../../../assets/insured/index_icon.png) no-repeat center center;
+                background-size: 32px auto;
+              }
+              &.name {
+                width: 180px;
+              }
+              &.unit {
+                flex: 1;
+                .percent {
+                  width: 70%;
+                  height: 10px;
+                  margin-left: 15px;
+                  margin-right: 15px;
+                  b {
+                    display: block;
+                    height: 100%;
+                    background: linear-gradient(270deg, #087C7D 0%, #0095C3 100%);
+                    border: 1px solid #2EE2B2;
+                  }
+                }
+                ::ng-deep .ant-statistic {
+                  width: 80px;
+                }
+                ::ng-deep .ant-statistic-title {
+                  margin: 0;
+                }
+                ::ng-deep .ant-statistic-content {
+                  font-size: 16px;
+                }
+              }
+            }
+            em {
+              font-style: normal;
+              font-weight: 500;
+            }
+            &:nth-child(2) {
+              .index {
+                background: url(../../../assets/insured/index_icon01.png) no-repeat center center;
+                background-size: 32px auto;
+              }
+            }
+            &:nth-child(3) {
+              .index {
+                background: url(../../../assets/insured/index_icon02.png) no-repeat center center;
+                background-size: 32px auto;
+              }
+            }
+            &:nth-child(4) {
+              .index {
+                background: url(../../../assets/insured/index_icon03.png) no-repeat center center;
+                background-size: 32px auto;
+              }
+            }
+          }
+        }
+      }
+      .section5 {
+        flex: 1;
+      }
+      .section6 {
+        flex: 1;
+      }
+    }
+
+    .right {
+      display: flex;
+      flex-direction: column;
+      flex: 1;
+      .head {
+        background: url(../../../assets/title_bg2.png) no-repeat left center;
+        background-size: auto 100%;
+      }
+      
+      .section7 {
+        height: 65%;
+      }
+      .section8 {
+        flex: 1;
+      }
+    }
+  }
+
+  
+
+}
