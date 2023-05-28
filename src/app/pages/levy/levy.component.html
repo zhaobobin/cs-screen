@@ -1,17 +1,44 @@
 <div class="levy">
   
-  <div class="header">
-    <img src="/assets/logo@2x.png" alt="logo" class="logo">
-    <h1>常熟医保综合监管平台</h1>
-
-    <a routerLink="/" class="back">
-      <img src="/assets/back.png" alt="back">
-      <span>返回</span>
-    </a>
-  </div>
+  <header></header>
 
   <div class="container">
-    <div class="top"></div>
+    <div class="top">
+      <div class="section left">
+        <div class="head">
+          <h2>险种征缴分布</h2>
+        </div>
+        <div class="content">
+          <div class="item" *ngFor="let item of top_left_data">
+            <img src="/assets/levy/group_1272@2x.png" alt="icon">
+            <p class="info">
+              <span class="number"><nz-statistic [nzValue]="(item.value | number)!" nzSuffix="万"></nz-statistic></span>
+              <span class="name">{{item.name}}</span>
+            </p>
+          </div>
+        </div>
+      </div>
+      <div class="section center">
+        <div class="item" *ngFor="let item of top_center_data">
+          <p class="number">{{item.value}}</p>
+          <p class="name">{{item.name}}</p>
+          <img src="/assets/levy/group_1285@2x.png" alt="icon">
+        </div>
+      </div>
+      <div class="section right">
+        <div class="head"></div>
+        <div class="content">
+          <div class="item" *ngFor="let item of top_right_data">
+            <img src="/assets/levy/group_1272@2x.png" alt="icon">
+            <p class="info">
+              <span class="number"><nz-statistic [nzValue]="(item.value | number)!" nzSuffix="万"></nz-statistic></span>
+              <span class="name">{{item.name}}</span>
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+
     <div class="bottom">
       <div class="left">
         <div class="section section1">
@@ -20,6 +47,15 @@
           </div>
           <div class="content">
             <div echarts [options]="section1_Option" class="echarts"></div>
+          </div>
+        </div>
+
+        <div class="section section2">
+          <div class="head">
+            <h2>缴费类型分布</h2>
+          </div>
+          <div class="content">
+            <div echarts [options]="section2_Option" class="echarts"></div>
           </div>
         </div>
       </div>
@@ -32,8 +68,63 @@
             <div echarts [options]="section3_Option" class="echarts"></div>
           </div>
         </div>
+
+        <div class="section section4 top-list">
+          <div class="head">
+            <h2>缴费单位TOP10</h2>
+          </div>
+          <div class="content">
+            <ul>
+              <li class="th">
+                <span class="no">排名</span>
+                <span class="name">缴费单位名</span>
+                <span class="unit">缴费金额</span>
+              </li>
+              <li *ngFor="let item of section4_Data; index as i">
+                <span class="no index">{{i + 1}}</span>
+                <span class="name">{{item.name}}</span>
+                <span class="unit">
+                  <i class="percent"><b [ngStyle]="{'width': ((item.number/6000)*100)+'%'}"></b></i>
+                  <nz-statistic [nzValue]="(item.number | number)!" nzSuffix="万"></nz-statistic>
+                </span>
+              </li>
+            </ul>
+          </div>
+        </div>
       </div>
-      <div class="right">3</div>
+      <div class="right">
+        <div class="section section5">
+          <div class="head">
+            <h2>居保收入分布</h2>
+          </div>
+          <div class="content">
+            <div echarts [options]="section5_Option" class="echarts"></div>
+          </div>
+        </div>
+
+        <div class="section section6 top-list">
+          <div class="head">
+            <h2>居民乡镇缴费TOP10</h2>
+          </div>
+          <div class="content">
+            <ul>
+              <li class="th">
+                <span class="no">排名</span>
+                <span class="name">居民乡镇名</span>
+                <span class="unit">缴费金额</span>
+              </li>
+              <li *ngFor="let item of section6_Data; index as i">
+                <span class="no index">{{i + 1}}</span>
+                <span class="name">{{item.name}}</span>
+                <span class="unit">
+                  <i class="percent"><b [ngStyle]="{'width': ((item.number/6000)*100)+'%'}"></b></i>
+                  <nz-statistic [nzValue]="(item.number | number)!" nzSuffix="万"></nz-statistic>
+                </span>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
     </div>
   </div>
 

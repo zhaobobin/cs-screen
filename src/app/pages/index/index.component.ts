@@ -90,6 +90,7 @@ export class IndexComponent {
     },
     tooltip: {
       trigger: "axis",
+      confine: true,
       axisPointer: {
         type: "cross",
         label: {
@@ -180,6 +181,7 @@ export class IndexComponent {
     },
     tooltip: {
       trigger: "axis",
+      confine: true,
       axisPointer: {
         type: "shadow",
       },
@@ -278,6 +280,7 @@ export class IndexComponent {
     },
     tooltip: {
       trigger: "axis",
+      confine: true,
       axisPointer: {
         type: "shadow",
       },

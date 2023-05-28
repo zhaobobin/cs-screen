@@ -1,13 +1,145 @@
 <div class="risk">
   
-  <div class="header">
-
-  </div>
+  <header></header>
 
   <div class="container">
-    <div class="left">4</div>
-    <div class="center">4</div>
-    <div class="right">4</div>
+    <div class="left">
+      <div class="section section1">
+        <div class="head">
+          <h2>内控规则</h2>
+        </div>
+        <div class="content">
+          <ul>
+            <li class="th">
+              <span class="no">序号</span>
+              <span class="name">业务内控规则</span>
+              <span class="unit">数据量</span>
+            </li>
+            <li *ngFor="let item of data_list1; index as i">
+              <span class="no index">{{i + 1}}</span>
+              <span class="name">{{item.name}}</span>
+              <span class="unit">
+                <nz-statistic [nzValue]="(item.value | number)!"></nz-statistic>
+              </span>
+            </li>
+          </ul>
+        </div>
+      </div>
+      <div class="section section2">
+        <div class="head">
+          <h2>业务内控处理进度</h2>
+        </div>
+        <div class="content">
+          <ul>
+            <li *ngFor="let item of section2_Option">
+              <p class="number">{{item.value}}</p>
+              <p class="name">{{item.name}}</p>
+              <img src="../../../assets/risk/schedule_icon.png" alt="icon">
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <div class="center">
+      <div class="category">
+        <ul class="list1">
+          <li class="item" *ngFor="let item of cate_list1">
+            <img [src]="item.icon" alt="icon">
+            <p>
+              <span class="name">{{item.name}}</span>
+              <span class="number">{{item.value}}</span>
+            </p>
+          </li>
+        </ul>
+        <ul class="list2">
+          <li class="item" *ngFor="let item of cate_list2">
+            <p class="name">{{item.name}}</p>
+            <p class="number">{{item.value}}</p>
+          </li>
+        </ul>
+      </div>
+      <div class="section section3">
+        <div class="head">
+          <h2>规则分布</h2>
+        </div>
+        <div class="content">
+          <div echarts [options]="section3_Option" class="echarts"></div>
+        </div>
+      </div>
+      <div class="section section4">
+        <div class="head">
+          <h2>稽查金额</h2>
+        </div>
+        <div class="content">
+          <div echarts [options]="section4_Option" class="echarts"></div>
+        </div>
+      </div>
+    </div>
+    <div class="right">
+      <div class="section section6">
+        <div class="head">
+          <h2>稽查处置</h2>
+        </div>
+        <div class="content">
+          <ul>
+            <li class="th">
+              <span class="no">序号</span>
+              <span class="name">两定机构</span>
+              <span class="unit">违规费用(元)</span>
+            </li>
+            <li *ngFor="let item of data_list6; index as i">
+              <span class="no index">{{i + 1}}</span>
+              <span class="name">{{item.name}}</span>
+              <span class="unit">
+                <nz-statistic [nzValue]="(item.value | number)!"></nz-statistic>
+              </span>
+            </li>
+          </ul>
+        </div>
+      </div>
+      <div class="section section7">
+        <!-- <div class="head">
+          <h2></h2>
+        </div> -->
+        <div class="content">
+          <ul>
+            <li class="th">
+              <span class="no">序号</span>
+              <span class="name">两定机构</span>
+              <span class="unit">违规费用(元)</span>
+            </li>
+            <li *ngFor="let item of data_list7; index as i">
+              <span class="no index">{{i + 1}}</span>
+              <span class="name">{{item.name}}</span>
+              <span class="unit">
+                <nz-statistic [nzValue]="(item.value | number)!"></nz-statistic>
+              </span>
+            </li>
+          </ul>
+        </div>
+      </div>
+      <div class="section section8">
+        <!-- <div class="head">
+          <h2></h2>
+        </div> -->
+        <div class="content">
+          <ul>
+            <li class="th">
+              <span class="no">序号</span>
+              <span class="name">两定机构</span>
+              <span class="unit">扣分</span>
+            </li>
+            <li *ngFor="let item of data_list8; index as i">
+              <span class="no index">{{i + 1}}</span>
+              <span class="name">{{item.name}}</span>
+              <span class="unit">
+                <nz-statistic [nzValue]="(item.value | number)!"></nz-statistic>
+              </span>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
   </div>
 
 </div>

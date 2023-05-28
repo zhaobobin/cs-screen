@@ -107,6 +107,7 @@ export class InsuredComponent {
     },
     tooltip: {
       trigger: "axis",
+      confine: true,
       axisPointer: {
         type: "cross",
         label: {
@@ -182,6 +183,7 @@ export class InsuredComponent {
     },
     tooltip: {
       trigger: "axis",
+      confine: true,
       axisPointer: {
         type: "cross",
         label: {
@@ -339,6 +341,7 @@ export class InsuredComponent {
     const option = {
       tooltip: {
         trigger: "axis",
+        confine: true,
         axisPointer: {
           type: "shadow",
         },
@@ -496,6 +499,7 @@ export class InsuredComponent {
     },
     tooltip: {
       trigger: "axis",
+      confine: true,
       axisPointer: {
         type: "cross",
         label: {

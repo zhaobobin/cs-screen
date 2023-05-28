@@ -1,13 +1,108 @@
 <div class="cost">
   
-  <div class="header">
-
-  </div>
+  <header></header>
 
   <div class="container">
-    <div class="left">3</div>
-    <div class="center">3</div>
-    <div class="right">3</div>
+    <div class="left">
+      <div class="section section1">
+        <div class="head">
+          <h2>险种支出分布</h2>
+        </div>
+        <div class="content">
+          <div echarts [options]="section1_Option" class="echarts"></div>
+        </div>
+      </div>
+      <div class="section section2">
+        <div class="head">
+          <h2>人群分布</h2>
+        </div>
+        <div class="content">
+          <div echarts [options]="section2_Option" class="echarts"></div>
+        </div>
+      </div>
+      <div class="section section3">
+        <div class="head">
+          <h2>基金支出分布</h2>
+        </div>
+        <div class="content">
+          <div echarts [options]="section3_Option" class="echarts"></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="center">
+      <div class="category">
+        <ul class="list1">
+          <li class="item" *ngFor="let item of cate_list1">
+            <img [src]="item.icon" alt="icon">
+            <p>
+              <span class="name">{{item.name}}</span>
+              <span class="number">{{item.value}}</span>
+            </p>
+          </li>
+        </ul>
+        <ul class="list2">
+          <li class="item" *ngFor="let item of cate_list2">
+            <p class="name">{{item.name}}</p>
+            <p class="number">{{item.value}}</p>
+          </li>
+        </ul>
+      </div>
+      <div class="section section4">
+        <div class="head">
+          <h2>费用趋势</h2>
+          <span>2022.04-2023.04</span>
+        </div>
+        <div class="content">
+          <div echarts [options]="section4_Option" class="echarts"></div>
+        </div>
+      </div>
+      <div class="section section5">
+        <div class="head">
+          <h2>门诊次均</h2>
+          <span>2022.04-2023.04</span>
+        </div>
+        <div class="content">
+          <div echarts [options]="section5_Option" class="echarts"></div>
+        </div>
+      </div>
+      <div class="section section6">
+        <div class="head">
+          <h2>住院次均</h2>
+          <span>2022.04-2023.04</span>
+        </div>
+        <div class="content">
+          <div echarts [options]="section6_Option" class="echarts"></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="right">
+      <div class="section section7">
+        <div class="head">
+          <h2>定点类型支出分布</h2>
+        </div>
+        <div class="content">
+          <div echarts [options]="section7_Option" class="echarts"></div>
+        </div>
+      </div>
+      <div class="section section8">
+        <div class="head">
+          <h2>苏州大市异地就医分布</h2>
+        </div>
+        <div class="content">
+          <div echarts [options]="section8_Option" class="echarts"></div>
+        </div>
+      </div>
+      <div class="section section9">
+        <div class="head">
+          <h2>跨省异地就医分布</h2>
+        </div>
+        <div class="content">
+          <div echarts [options]="section9_Option" class="echarts"></div>
+        </div>
+      </div>
+    </div>
   </div>
 
 </div>

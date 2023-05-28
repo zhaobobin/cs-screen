@@ -1,0 +1,19 @@
+<div class="header">
+  <img src="/assets/logo@2x.png" alt="logo" class="logo">
+  <h1>常熟医保综合监管平台</h1>
+
+  <a routerLink="/" class="back" *ngIf="!hideGoBack">
+    <img src="/assets/back.png" alt="back">
+    <span>返回</span>
+  </a>
+
+  <div class="date-wrapper">
+    <p class="p1">
+      <span class="time">{{currentDate.time}}</span>
+    </p>
+    <p class="p2">
+      <span>{{currentDate.day}}</span>
+      <span>{{currentDate.date}}</span>
+    </p>
+  </div>
+</div>
