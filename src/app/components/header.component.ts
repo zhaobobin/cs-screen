@@ -36,11 +36,26 @@ export class HeaderComponent {
   renderDate = () => {
     const date = new Date();
     const year = date.getFullYear(); //获取当前年份
-    const month = date.getMonth() + 1; //获取当前月份
-    const day = date.getDate(); //获取当前日
-    const hours = date.getHours(); //获取小时
-    const minutes = date.getMinutes(); //获取分钟
-    const seconds = date.getSeconds(); //获取秒
+    let month = (date.getMonth() + 1).toString(); //获取当前月份
+    let day = date.getDate().toString(); //获取当前日
+    let hours = date.getHours().toString(); //获取小时
+    let minutes = date.getMinutes().toString(); //获取分钟
+    let seconds = date.getSeconds().toString(); //获取秒
+    if (month.length === 1) {
+      month = '0' + month
+    }
+    if (day.length === 1) {
+      day = '0' + day
+    }
+    if (hours.length === 1) {
+      hours = '0' + hours
+    }
+    if (minutes.length === 1) {
+      minutes = '0' + minutes
+    }
+    if (hours.length === 1) {
+      seconds = '0' + seconds
+    }
     const result = {
       date: year + "/" + month + "/" + day,
       time: hours + ":" + minutes + ":" + seconds,
