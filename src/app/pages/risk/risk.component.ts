@@ -139,19 +139,17 @@ export class RiskComponent {
         data: [1400, 1000, 800, 600, 500, 400, 1400, 1000, 800, 600, 500, 400],
         barWidth: 16,
         itemStyle: {
-          normal: {
-            color: new echarts.graphic.LinearGradient(0, 0, 0, 1, [
-              {
-                // 四个数字分别对应 数组中颜色的开始位置，分别为 右，下，左，上。例如（1,0,0,0 ）代表从右边开始渐
-                // 变。offset取值为0~1，0代表开始时的颜色，1代表结束时的颜色，柱子表现为这两种颜色的渐变。
-                offset: 0,
-                color: "rgba(46, 226, 178, 1)",
-              },
-              {
-                offset: 1,
-                color: "rgba(46, 226, 178, 0)",
-              },
-            ]),
+          color: {
+            type: 'linear',
+            x: 0,
+            y: 0,
+            x2: 0,
+            y2: 1,
+            colorStops: [{
+                offset: 0, color: "rgba(46, 226, 178, 1)" // 0% 处的颜色
+            }, {
+                offset: 1, color: "rgba(46, 226, 178, 0)" // 100% 处的颜色
+            }]
           },
         },
       },

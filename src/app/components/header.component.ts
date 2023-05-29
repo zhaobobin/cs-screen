@@ -7,12 +7,7 @@ import { Router } from "@angular/router";
   templateUrl: "./header.component.html",
 })
 export class HeaderComponent {
-  constructor(router: Router) {
-    this.hideGoBack = true;
-    if (router.url !== "/") {
-      this.hideGoBack = false;
-    }
-  }
+  hideGoBack = true;
 
   currentDate: any = {
     date: "",
@@ -62,10 +57,13 @@ export class HeaderComponent {
       day: this.getWeekday()
     };
     this.currentDate = result;
-    console.log(this.currentDate);
   };
 
   ngOnInit() {
     setInterval(this.renderDate, 1000);
+    console.log(window.location.pathname)
+    if (window.location.pathname !== '/') {
+      this.hideGoBack = false;
+    }
   }
 }
