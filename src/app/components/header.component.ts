@@ -61,7 +61,6 @@ export class HeaderComponent {
 
   ngOnInit() {
     setInterval(this.renderDate, 1000);
-    console.log(window.location.pathname)
     if (window.location.pathname !== '/') {
       this.hideGoBack = false;
     }
